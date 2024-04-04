@@ -28,11 +28,7 @@ type PageParams = {
   }
 }
 
-export default async function UserPage({params}: {
-  params: {
-    userId: string;
-  }
-}) {
+export default async function UserPage({params}: PageParams) {
   const session = await getAuthSession()
   const user = await getUserProfile(params.userId)
 
